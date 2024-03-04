@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="script" href="fitwell.js">
+  <link rel="icon"  href="/images/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  <title>Be fit be well!</title>
+  <style>
+    .above-hr{
+      background-color: rgba(158, 225, 236, 0.49000000953674316);
+      padding: 5px;
+    }
+    hr{
+      border: none; 
+      height: 2px;
+      background-color: #4e4f50;
+      width: 100%; 
+      margin: 10px auto; 
+    }
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+    a:visited {
+      color:rgba(158, 225, 236, 0.49000000953674316) ;
+    }
+    .container{
+      position: absolute;
+      bottom: 5px;
+      left:70px;
+      border: 0px 60px 60px 60px;;
+    }
+   .login-popup{
+    display: none;
+   }
+   .head{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .head .close{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem; 
+    font-weight: bold;
+   }
+   .custom-button:hover{
+      background-color: rgba(158, 225, 236, 0.49000000953674316);
+   }
+   .custom-button:focus{
+    background-color: #E1FCFE;
+   }
+   
+  </style>
+  
+</head>
+<body>
+  <div class="above-hr">
+  <div class="frame16-container">
+    <div class="frame16-frame16">
+      <img src="/images/logo.png" alt="Frame9865" class="frame16-frame" />
+      <div class="frame16-frame9">
+        <div class="frame16-frame91">
+          <span class="frame16-text"><a href="#home">Home</a></span>
+        </div>
+        <div class="frame16-frame10">
+          <span class="frame16-text02"><a href="#about">About</a></span>
+        </div>
+        <div class="frame16-frame11">
+          <span class="frame16-text04"><a href="account.html" target="_blank">Activities</a></span>
+        </div>
+        <div class="frame16-frame8">
+          <span class="frame16-text06"><a href="account.html#contact" target="_blank">Contact us</a></span>
+        </div>
+      </div>
+      <div class="frame16-frame15">
+        <div class="frame16-frame14">
+          <div class="frame16-search"></div>
+          <div class="frame16-frame12">
+            <img src="/images/search.png" alt="search" class="frame16-vector" />
+            <span class="frame16-text08">Search</span>
+          </div>
+          <div class="frame16-frame13">
+            <img src="/images/bell-outline.svg" alt="notifications" class="frame16-belloutline" />
+          </div>
+        </div>
+        
+      </div>
+      <button  type="button" id="register" class="custom-button" onmouseover="showUsersign()" 
+      style="background-color: #5FC8DF; box-shadow: #E1FCFE; border-radius: 20px;height: 40px;width: 133px;padding-left: 24px; padding-right: 24px;padding-top: 12px;padding-bottom: 12px; border-style: hidden;outline:none ;filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1)); cursor: pointer">
+      Register now</button>
+      <script>
+       
+const createAccountForm = document.getElementById('createAccountForm');
+
+createAccountForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const fullName = document.getElementById('fullName');
+  const email = document.getElementById('email');
+  const phoneNumber = document.getElementById('phoneNumber');
+  const password = document.getElementById('password');
+  console.log(`Full Name: ${fullName.value}, Email: ${email.value}, Phone Number: ${phoneNumber.value}, Password: ${password.value}`);
+});
+      </script>
+        
+     
+    </div>
+  </div>
+  <h1 style="font-size: 32; font-weight: semibold Italic; text-align: center;">FITNESS AND WELLNESS SYSTEM</h1>
+</div>
+  <hr>
+  <div id="home">
+  <h2 style="font-size: 32px; font-weight: bold;">00. HOME</hh2>
+   <h3 style="font-size: 28px; font-weight: semibold;">Welcome</h3>
+  <p style="font-size: 16px; font-weight: bold; color:#0b0b0c ;">Need a healthy lifestyle? Worry no more...<br>
+       Our system provides personalized<br>fitness and wellness<br>
+       in order to empower yoou on your<br>journey to healthier and<br>
+       happier lifestyle.<br><br>
+
+       Experience beyond benefits:<br>
+       Embark on a journey where the advantages are<br>
+       only the beginning. You're not just signing up<br> 
+       for benefits; you're diving into a comprehensive<br>
+       wellness experiene tailored to exceed your aspirations.
+  </p>
+</div>
+<div class="white-rectangle"></div>
+<div class="blue-rectangle"></div>  
+
+<div class="container">
+  <img src="/images/fit.jpg" alt="An additional image" width="400px" height="430px" style="border-radius: 60px 0px 60px 60px;">
+</div>
+
+ <div id="about">
+  <h2 style="font-size: 32px; font-weight: bold;">01. ABOUT US</h2>
+  <p style="font-size: 16px; font-weight: regular;">Our mission is to make wellness accessible<br>
+    to everyone. We belive that a healthier lifestyle<br>
+    is not a luxury but fundamental right. We are dedicated<br>
+    to providing a platform that nurtures, motivates, and guides<br>
+    individuals on their path to a balanced and fulfilling life.
+  </p>
+ </div>
+ <div class="pop" id="register">
+  <div class="head">
+    <h2>Create Account</h2>
+    <button data-close-button class="close">&times;</button>
+  </div>
+    <p>Already have an account? <a href="/sign.html" target="_blank" id="signInLink" class="sign">Sign in</a></p>
+    <form id="createAccountForm" method="post">
+      <label for="fullName">Full Name:</label><br>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required><br>
+      <label for="email" >Email address:</label><br>
+      <input type="email" id="email" name="email" placeholder="Enter email address"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
+      <label for="phoneNumber" >Phone Number:</label><br>
+      <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number"><br>
+      <label for="password">Password?</label><br>
+      <input type="password" id="password" class="pass"  name="password" placeholder="........"  required><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+ 
+<script>
+   function showUsersign() {
+      var popup=document.querySelector('.pop');
+      var btn=document.getElementById('register');
+      var span=document.getElementsByClassName("close")[0];
+
+      btn.onclick=function(){
+        popup.style.display="block";
+      }
+
+      span.onclick=function(){
+        popup.style.display="none";
+
+      }
+      window.onclick= function(event){
+        if(event.target==popup){
+          popup.style.display="none";
+        }
+      }
+  }
+</script>
+</body>
+</html>

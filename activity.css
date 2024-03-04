@@ -1,0 +1,178 @@
+body{
+    background-color: #EFFEFF;
+    font-family: Josefin sans;
+    padding: 10px 30px;
+}
+.my-page{
+    width: 80%;
+    margin: 0 auto;
+    background-color: #EFFEFF;
+    outline: #E1FCFE;
+    box-shadow:5px 5px 5px 5px rgba(46, 46, 46, 0.1);
+    border-radius: 5px;
+    padding: 49px;
+}
+h2{
+    font-weight: bold;
+    font-size: 32px;
+    text-align:center;
+}
+#mybtn{
+    background-color: #5FC8DF; 
+    box-shadow: #E1FCFE; 
+    border-radius: 20px;
+    height: 40px;
+    width: auto;
+    padding-left: 24px; 
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px; 
+    border-style: hidden;
+    outline:none ;
+    filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1));
+    cursor: pointer;
+}
+.activity{
+    width: 60%;
+    margin:0 auto;
+    background-color: #EFFEFF;
+    outline: #E1FCFE;
+    box-shadow:5px 5px 5px 5px rgba(46, 46, 46, 0.1);
+    border-radius: 5px;
+    padding:120px;                                      
+    text-align: left;
+   
+}
+
+.top-row, .bottom-row{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+.rec {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:10px 20px 3px#E1FCFE ;
+    border-radius:20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rec1{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:10px 20px 3px#E1FCFE ;
+    border-radius:20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.rec2{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:10px 20px 3px#E1FCFE ;
+    border-radius:20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.rec3{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:10px 20px 3px#E1FCFE ;
+    border-radius:20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.rec4{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:10px 20px 3px#E1FCFE ;
+    border-radius:20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.rec5{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color:rgba(255, 255, 255, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:10px 20px 3px#E1FCFE ;
+    border-radius:20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.goalsChoosing{
+    width: 60%;
+    margin:0 auto;
+    background-color: #EFFEFF;
+    outline: #E1FCFE;
+    box-shadow:5px 5px 5px 5px rgba(46, 46, 46, 0.1);
+    border-radius: 5px;
+    padding-top: 20px;
+    padding: 120px;
+    align-items: center;
+    text-align:center;
+    margin-bottom: 30px;
+}
+.update{
+    background-color: #5FC8DF; 
+    box-shadow: #E1FCFE; 
+    border-radius: 20px;
+    height: 40px;
+    width: auto;
+    margin-top: 20px;
+    padding-left: 24px; 
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px; 
+    border: none;
+    outline:none ;
+    filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1));
+    cursor: pointer;
+}
+
+.contact-section{
+    width: 60%;
+    margin: 0 auto;
+    background-color:#5FC8DF;
+    border-color: #E1FCFE;
+    box-shadow:5px 5px 5px rgba(46, 46, 46, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 120px;
+    text-align: center;
+    color:#FFFFFF;
+}

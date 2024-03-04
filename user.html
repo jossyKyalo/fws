@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User profile</title>
+    <link rel="stylesheet" href="user.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+</head>
+<style>
+    body{
+        font-family: Josefin Sans;
+        background-color: #E1FCFE;
+    }
+    a{
+        text-decoration:none;
+        color:#000000;
+    }
+   a:visited{
+    text-decoration: underline;
+    color:#1AB0B0;
+   }
+   h2{
+    text-decoration:underline;
+    font-size: 20px;
+    font-style: semibold;
+   }
+   .container{
+    display: flex;
+    position: relative;
+    height: 100vh;
+   }
+   .pane{
+   flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+   }
+   .left-side{
+    background: #EFFEFF;
+   }
+   .line{
+    position: relative;
+    width: 2px;
+    background: #000000;
+   }
+   .line span{
+    position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #000000;
+  border-radius: 50%;
+   }
+   .rigth-side{
+    background: #EFFEFF;
+   }
+</style>
+<body>
+    <header>
+        <a href="user.html">Account</a>
+        <a href="dashboard.html">dashboard</a>
+    </header>
+    <div class="container">
+    <div class="pane left-side">
+        <h2>Account Information</h2>
+        <p>Name:</p>
+        <h2>Contact info</h2>
+    </div>
+    <div class="line">
+        <span></span>
+    </div>
+    <div class="pane rigth-side">
+        <h2>Password and security</h2>
+        <h2>Personal details</h2>
+     </div>
+    </div>
+    
+</body>
+<script>
+
+</script>
+</html>
+  
+  
+  
+ 

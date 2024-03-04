@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #EFFEFF;
+            margin: 0;
+            font-family: Josefin Sans;
+        }
+        header{
+            background-color: #E1FCFE;
+            font-family: Josefin Sans;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h2{
+            color:#5FC8DF;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        hr{
+            background-color: #E1FCFE;
+            height: 1px;
+            border:none;
+            margin:20px 0;
+            box-shadow: 0 4px 8px #5FC8DF;
+        }
+        a{
+            text-decoration: none;
+            color:#5FC8DF; 
+            font-size:16px;
+            font-weight: regular;
+        }
+ .login-popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 580px;
+  height: auto;
+  padding: 40px;
+  background-color:#E1FCFE;
+  border: solid 1px  #EFFEFF;
+  box-shadow:5px 5px 5px #5FC8DF;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 10px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-popup h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-popup label{
+  display: block;
+  margin-bottom: 5px;
+}
+.login-popup input[type="text"]  {
+  width: 285px;
+  height: 25px;
+  padding: 10px;
+  margin-bottom: 35px;
+  border: 1px solid #CBC1C1;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.login-popup input[type="password"]{
+  font-size: 20px;
+  font-weight: bold;
+  width: 285px;
+  height: 25px;
+  padding: 10px;
+  margin-bottom: 35px;
+  border: 1px solid #CBC1C1;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.login-popup input[type="submit"] {
+  background-color: #5FC8DF; 
+  box-shadow: #E1FCFE; 
+  border-radius: 20px;
+  height: 40px;
+  width: auto;
+  padding-left: 24px; 
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px; 
+  border-style: hidden;
+  outline:none ;
+  filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1)); 
+}
+.pass::placeholder{
+  background-image: url(https://cdn-icons-png.flaticon.com/128/2549/2549910.png);
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: left;
+  font-weight: bold;
+  font-size: 24px ;
+  text-align: center;
+  padding: 2px 2px 15px 2px;
+}
+footer{
+    background-color: #E1FCFE;
+    text-align: center;
+    padding: 20px;
+    position:fixed;
+    bottom: 0;
+    box-shadow: 0 -2px 4px hsl(191, 67%, 62%);
+    width: 100%;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h2>FITNESS AND WELLNESS LOG IN</h2>
+        <a href="index.html" target="_self" >view home page</a>
+      
+    </header>
+    <hr>
+    <div class="login-popup" id="login">
+        <h2>User Login</h2>
+        <form id="userLogins" method="post">
+          <label for="email">Email Address:</label><br>
+          <input type="text" id="email" name="email" placeholder="Enter email address" required><br>
+          <label for="pass">Password</label><br>
+          <input type="password" id="pass"  name="password" placeholder="........" required pattern="[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]"><br>
+          <input type="submit" value="Log in" >
+          </form>
+        </div>
+     <footer>
+        <p>Copyright &copy;2024</p>
+        <p>Incase of any queries please Email: <a href="mailto:fitnesswellness@gmail.com">fitnesswellness@gmail.com</a></p>
+        <p>All rights reserved.</p>
+    </footer>
+    <script>
+      // Get form elements
+const loginForm = document.getElementById('userLogins');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('pass');
+
+// Add event listener to the form
+loginForm.addEventListener('submit', (event) => {
+  // Prevent default form submission
+  event.preventDefault();
+
+  // Validate email
+  if (!isValidEmail(emailInput.value)) {
+    alert('Please enter a valid email address.');
+    return; // Prevent further processing if email is invalid
+  }
+
+  // Validate password (basic example, use more robust validation)
+  if (passwordInput.value.length < 8) {
+    alert('Password must be at least 8 characters long.');
+    return; // Prevent further processing if password is invalid
+  }
+
+  // If validation passes (replace with actual form submission logic):
+  // - Send form data to the server using AJAX or form submission
+
+  // Example (replace with actual server interaction):
+  console.log('Form data:', {
+    email: emailInput.value,
+    password: passwordInput.value
+  });
+});
+
+// Simple email validation function (replace with more comprehensive validation)
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+    </script>
+</body>
+</html>

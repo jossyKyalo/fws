@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+section {
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+h1, h2 {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li li {
+  margin-left: 20px;
+}
+    </style>
+</head>
+<body>
+        <header>
+          <h1>Dashboard</h1>
+          <p>Welcome Back</p>
+        </header>
+        <main>
+          <section>
+            <h2>Steps</h2>
+            <p>2,500 Steps</p>
+            <p>50% of your goals</p>
+          </section>
+          <section>
+            <h2>Activity</h2>
+            <ul>
+              <li>Mon: Breakfast</li>
+              <li>Wed: Recommended Diet</li>
+              <li>Thu: Recommended Diet</li>
+              <li>Fri: Water</li>
+              <li>Sat: </li>
+              <li>Sun: </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Progress</h2>
+            <ul>
+              <li>Stretching: 40hrs</li>
+              <li>Scheduled: Yoga Class</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Fitness</h2>
+            <ul>
+              <li>Swimming</li>
+              <li>Cardio</li>
+              <li>Stretching</li>
+              <ul>
+                <li>Treadmill</li>
+                <li>Strength</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>Calories</h2>
+            <ul>
+              <li>22 Mar: Today (Under)</li>
+              <li>Weekly: 30 hrs / 40 hrs</li>
+            </ul>
+          </section>
+        </main>
+        <footer>
+          <p>Blaise Kyalo</p>
+          <ul>
+            <li>75kg, 6.5ft</li>
+            <li>25yrs</li>
+          </ul>
+        </footer>
+</body>
+</html>
