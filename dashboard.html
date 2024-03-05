@@ -3,115 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon"  href="/images/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <title>Your dashboard</title>
     <style>
-        body {
-  font-family: Arial, sans-serif;
+  body {
+  font-family: Josefin Sans;
+  background-color: #EFFEFF;
 }
-
+hr{
+  background-color: #E1FCFE;
+  height: 1px;
+  border:none;
+  margin:20px 0;
+   box-shadow: 0 4px 8px #5FC8DF;
+}
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
-
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
+.goal-container1, .goal-container2, .goal-container3{
+background-color:#ffffff;
+height:68px;
+width:305px;
+padding:0px;
+outline:#EFFEFF;
+box-shadow:2px 2px 2px #838282;
+border-radius: 10px;
 }
-
-section {
-  border: 1px solid #ddd;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-}
-
-h1, h2 {
-  font-weight: bold;
-  margin-top: 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-li li {
-  margin-left: 20px;
+.yourGoal{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
 }
     </style>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawVisualization);
+
+     function drawVisualization() {
+       var data = google.visualization.arrayToDataTable([
+         ['Days', 'Water', 'Calories', 'Steps', 'Class attendance', 'Sleep', 'Average'],
+         ['Mon',  165,      938,         522,             998,           450,      614.6],
+         ['Tue',  135,      1120,        599,             1268,          288,      682],
+         ['Wed',  157,      1167,        587,             807,           397,      623],
+         ['Thur',  139,      1110,        615,             968,           215,      609.4],
+         ['Fri',  136,      691,         629,             1026,          366,      569.6]
+       ]);
+
+       var options = {
+         title : 'Fiteness and Wellness Tracker System',
+         vAxis: {title: 'Percentage'},
+         hAxis: {title: 'Days'},
+         seriesType: 'bars',
+         series: {5: {type: 'line'}}
+       };
+
+       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+       chart.draw(data, options);
+     }
+   </script>
 </head>
 <body>
         <header>
-          <h1>Dashboard</h1>
-          <p>Welcome Back</p>
+          <h1 style="color:#5FC8DF">Dashboard</h1>
         </header>
-        <main>
-          <section>
-            <h2>Steps</h2>
-            <p>2,500 Steps</p>
-            <p>50% of your goals</p>
-          </section>
-          <section>
-            <h2>Activity</h2>
-            <ul>
-              <li>Mon: Breakfast</li>
-              <li>Wed: Recommended Diet</li>
-              <li>Thu: Recommended Diet</li>
-              <li>Fri: Water</li>
-              <li>Sat: </li>
-              <li>Sun: </li>
-            </ul>
-          </section>
-          <section>
-            <h2>Progress</h2>
-            <ul>
-              <li>Stretching: 40hrs</li>
-              <li>Scheduled: Yoga Class</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Fitness</h2>
-            <ul>
-              <li>Swimming</li>
-              <li>Cardio</li>
-              <li>Stretching</li>
-              <ul>
-                <li>Treadmill</li>
-                <li>Strength</li>
-              </ul>
-            </ul>
-          </section>
-          <section>
-            <h2>Calories</h2>
-            <ul>
-              <li>22 Mar: Today (Under)</li>
-              <li>Weekly: 30 hrs / 40 hrs</li>
-            </ul>
-          </section>
-        </main>
-        <footer>
-          <p>Blaise Kyalo</p>
-          <ul>
-            <li>75kg, 6.5ft</li>
-            <li>25yrs</li>
-          </ul>
-        </footer>
+        <hr>
+        <div class="analysis-section">
+          <h2>Welcome Back</h2>
+          <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        </div>
+          <div class="user-section">
+            <p>Name</p>
+            <p>weigth heigth Age</p>
+            <h3>Your goals</h3>
+            <div class="goal-container1">
+              <img src="https://images.unsplash.com/photo-1590646299178-1b26ab821e34?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="run" class="yourGoal">
+              <p>Running</p>
+            </div><br>
+            <div class="goal-container2">
+              <img src="https://images.unsplash.com/photo-1520206183501-b80df61043c2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sleep" class="yourGoal">
+              <p>Sleeping</p>
+            </div><br>
+            <div class="goal-container3">
+              <img src="https://images.unsplash.com/photo-1634463278803-f9f71890e67d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="weigth" class="yourGoal">
+              <p>Weigth loss</p>
+            </div><br>
+            <img src="https://images.unsplash.com/photo-1577221084712-45b0445d2b00?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="130" width="340">
+          </div>
+       
 </body>
 </html>
