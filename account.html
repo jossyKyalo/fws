@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities</title>
     <link rel="stylesheet" href="activity.css">
+    <link rel="icon"  href="/images/logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
   <style>
     .myImage{
@@ -57,8 +58,13 @@
             </p>
             <button id="mybtn">Learn more</button>
         </div>
-            
-    
+        <script>
+           
+            const myButton = document.getElementById('mybtn');
+myButton.addEventListener('click', () => {
+    window.location.href =  'https://en.wikipedia.org/wiki/Physical_fitness'
+});
+        </script>
 </div>
             <br><br><br>
             <div class="goalsChoosing">
@@ -94,7 +100,25 @@
                  </button>
                  </div>
                 </div> <br>
-                <button class="update">Update profile</button><br><br>
+                <script>
+                    const buttons = document.querySelectorAll('.goals button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    const chosenGoal = event.target.value; 
+    sessionStorage.setItem('chosenGoal', chosenGoal);
+    window.location.href = 'dashboard.html';
+  });
+});
+
+                </script>
+                <button class="update" id="up">Update profile</button><br><br>
+                <script>
+                      const upButton = document.getElementById('up');
+      upButton.addEventListener('click', () => {
+    window.location.href =  'user.html'
+});
+                </script>
             </div>
                 <div class="contact-section" id="contact">
                     <h2>03. CONTACT US</h2>
@@ -116,5 +140,52 @@
                 </div>
                 <p>&copy;Copyright 2024. All rights reserved.</p>
                 </div>
+           
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.goals button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const chosenGoal = event.target.innerText.trim();
+                const username = 'user123'; 
+                
+                fetch('/store_goal', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, chosen_goal: chosenGoal }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+               
+                window.location.href = 'dashboard.html';
+            });
+        });
+
+       
+        const username = 'user123'; 
+
+       
+        fetch(`/get_profile?username=${username}`)
+            .then(response => response.json())
+            .then(data => {
+                const user_data = data.user_data;
+                console.log('User Data:', user_data);
+               
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+</script>          
 </body>   
 </html> 

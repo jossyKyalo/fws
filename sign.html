@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="/images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
-    <title>Document</title>
+    <title>Sign in</title>
     <style>
         body{
             background-color: #EFFEFF;
@@ -148,39 +149,31 @@ footer{
         <p>All rights reserved.</p>
     </footer>
     <script>
-      // Get form elements
 const loginForm = document.getElementById('userLogins');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('pass');
 
-// Add event listener to the form
-loginForm.addEventListener('submit', (event) => {
-  // Prevent default form submission
-  event.preventDefault();
 
-  // Validate email
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault();
   if (!isValidEmail(emailInput.value)) {
     alert('Please enter a valid email address.');
-    return; // Prevent further processing if email is invalid
+    return; 
   }
 
-  // Validate password (basic example, use more robust validation)
   if (passwordInput.value.length < 8) {
     alert('Password must be at least 8 characters long.');
-    return; // Prevent further processing if password is invalid
+    return; 
   }
 
-  // If validation passes (replace with actual form submission logic):
-  // - Send form data to the server using AJAX or form submission
-
-  // Example (replace with actual server interaction):
+ 
   console.log('Form data:', {
     email: emailInput.value,
     password: passwordInput.value
   });
 });
 
-// Simple email validation function (replace with more comprehensive validation)
+
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);

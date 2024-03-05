@@ -1,10 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
-# MySQL configurations
+
 app.config['MYSQL_HOST'] = 'root@localhost'
 app.config['MYSQL_USER'] = 'Josephine'
 app.config['MYSQL_PASSWORD'] = '@j481240KK'
@@ -42,11 +42,11 @@ def workout():
 
 @app.route('/login', methods=['POST'])
 def login_user():
-    address = request.json['email']
+    username = request.json['username']
     password = request.json['password']
 
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM users WHERE username = %s", (email,))
+    cur.execute("SELECT * FROM users WHERE username = %s", (username,))
     user = cur.fetchone()
     cur.close()
 
@@ -54,6 +54,31 @@ def login_user():
         return jsonify({'message': 'Login successful'})
     else:
         return jsonify({'message': 'Invalid username or password'}), 401
+    
+@app.route('/store_goal', methods=['POST'])
+def store_goal():
+    username = request.json['username']
+    chosen_goal = request.json['chosen_goal']
+
+    
+    cur = mysql.connection.cursor()
+    cur.execute("UPDATE users SET chosen_goal = %s WHERE username = %s", (chosen_goal, username))
+    mysql.connection.commit()
+    cur.close()
+
+    return jsonify({'message': 'Goal stored successfully'})
+
+
+@app.route('/get_profile', methods=['GET'])
+def get_profile():
+    username = request.args.get('username')
+
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM users WHERE username = %s", (username,))
+    user_data = cur.fetchone()
+    cur.close()
+
+    return jsonify({'user_data': user_data})
 
 @app.route('/record_workout', methods=['POST'])
 def record_workout():
@@ -63,12 +88,11 @@ def record_workout():
     sets = request.json['sets']
     time = request.json['time']
 
-    # Check if exercise type is valid
+   
     valid_exercises = ['sit-ups', 'push-ups', 'squats', 'plank']
     if exercise_type.lower() not in valid_exercises:
         return jsonify({'message': 'Invalid exercise type'}), 400
 
-    # Calculate total calories burned for the exercise
     met_values = {
         'sit-ups': 3.5,
         'push-ups': 3.5,
@@ -78,7 +102,6 @@ def record_workout():
 
     energy_expenditure = met_values.get(exercise_type.lower()) * time
 
-    # Save workout details in the database
     cur = mysql.connection.cursor()
     cur.execute("INSERT INTO workouts (username, exercise_type, reps, sets, time, energy_expenditure) VALUES (%s, %s, %s, %s, %s, %s)", 
                 (username, exercise_type, reps, sets, time, energy_expenditure))
