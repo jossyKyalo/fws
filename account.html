@@ -68,21 +68,21 @@ myButton.addEventListener('click', () => {
 </div>
             <br><br><br>
             <div class="goalsChoosing">
-                <p style="font-size: 28px; text-align: center; font-weight: semi-bold;">Choose your goal:</p>
+                <p style="font-size: 28px; text-align: center; font-weight: semi-bold;">Available exercises and health options:</p>
                 
                 <div class="goals">
                 <div class="top-row">
                  <button class="rec">
-                    <p>Weight loss</p><br>
-                    <img src="https://images.unsplash.com/photo-1634463278803-f9f71890e67d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100px" height="100px"/>
+                    <p>Push up</p><br>
+                    <img src="https://plus.unsplash.com/premium_photo-1673210887568-fb93b383dfea?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100px" height="100px"/>
                  </button>
                  <button class="rec1">
-                    <p>Sleeping</p><br>
-                    <img src="https://images.unsplash.com/photo-1520206183501-b80df61043c2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100px" height="100px">
+                    <p>Sit ups</p><br>
+                    <img src="https://plus.unsplash.com/premium_photo-1661353218808-619b07988c7f?q=80&w=2109&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100px" height="100px">
                  </button>
                  <button class="rec2">
-                    <p>Running</p><br>
-                    <img src="https://images.unsplash.com/photo-1590646299178-1b26ab821e34?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100px" height="100px">
+                    <p>Squats</p><br>
+                    <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="100px" height="100px">
                  </button>
                  </div>
                  <div class="bottom-row">
@@ -100,19 +100,8 @@ myButton.addEventListener('click', () => {
                  </button>
                  </div>
                 </div> <br>
-                <script>
-                    const buttons = document.querySelectorAll('.goals button');
-
-buttons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    const chosenGoal = event.target.value; 
-    sessionStorage.setItem('chosenGoal', chosenGoal);
-    window.location.href = 'dashboard.html';
-  });
-});
-
-                </script>
-                <button class="update" id="up">Update profile</button><br><br>
+              
+                <button class="update" id="up">View profile</button><br><br>
                 <script>
                       const upButton = document.getElementById('up');
       upButton.addEventListener('click', () => {
@@ -143,49 +132,35 @@ buttons.forEach(button => {
            
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const buttons = document.querySelectorAll('.goals button');
+  const firstButton = document.getElementsByClassName('rec')[0];
+      firstButton.addEventListener('click', () => {
+    window.location.href =  'https://www.verywellfit.com/the-push-up-exercise-3120574';
+      });
 
-        buttons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const chosenGoal = event.target.innerText.trim();
-                const username = 'user123'; 
-                
-                fetch('/store_goal', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, chosen_goal: chosenGoal }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data.message);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+      const secondButton = document.getElementsByClassName('rec1')[0];
+      secondButton.addEventListener('click', () => {
+    window.location.href =  'https://youtu.be/pCX65Mtc_Kk?si=q6WTHf29Z7phYuAx';
+});  
 
-               
-                window.location.href = 'dashboard.html';
-            });
-        });
+const thirdButton = document.getElementsByClassName('rec2')[0];
+      thirdButton.addEventListener('click', () => {
+    window.location.href =  'https://www.realsimple.com/health/fitness-exercise/workouts/squat-form';
+});  
+ 
+const fourthButton = document.getElementsByClassName('rec3')[0];
+      fourthButton.addEventListener('click', () => {
+    window.location.href =  'workout.html';
+});  
 
-       
-        const username = 'user123'; 
+const fifthButton = document.getElementsByClassName('rec4')[0];
+      fifthButton.addEventListener('click', () => {
+    window.location.href =  'https://www.britannica.com/science/human-nutrition';
+});  
 
-       
-        fetch(`/get_profile?username=${username}`)
-            .then(response => response.json())
-            .then(data => {
-                const user_data = data.user_data;
-                console.log('User Data:', user_data);
-               
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    });
+     const lastButton = document.getElementsByClassName('rec5')[0];
+      lastButton.addEventListener('click', () => {
+    window.location.href =  'https://en.wikipedia.org/wiki/Physical_therapy';
+});  
 </script>          
 </body>   
 </html> 

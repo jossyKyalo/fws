@@ -12,22 +12,26 @@ app.config['MYSQL_DB'] = 'fitness_db'
 
 mysql = MySQL(app)
 
+
+
+
 @app.route('/register', methods=['POST'])
 def register():
-    username = request.json['username']
+    fullName = request.json['fullName']
     password = generate_password_hash(request.json['password'])
-    gender = request.json['gender']
-    height = request.json['height']
-    weight = request.json['weight']
-    age = request.json['age']
+    email = request.json['email']
+    phoneNumber = request.json['phoneNumber']
+   
 
     cur = mysql.connection.cursor()
-    cur.execute("INSERT INTO users (username, password, gender, height, weight, age) VALUES (%s, %s, %s, %s, %s, %s)", 
-                (username, password, gender, height, weight, age))
+    cur.execute("INSERT INTO users (fullName, password, email, phoneNumber) VALUES (%s, %s, %s, %s)", 
+                (fullName, password, email, phoneNumber))
     mysql.connection.commit()
     cur.close()
 
     return jsonify({'message': 'User registered successfully'})
+'''
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -109,6 +113,8 @@ def record_workout():
     cur.close()
 
     return jsonify({'message': 'Workout recorded successfully'})
+    '''
 
 if __name__ == '_main_':
     app.run(debug=True)
+    

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="https://images.unsplash.com/photo-1629121958394-3be95d8c057c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <title>Burning calories</title>
+    <style>
+        body{
+            background-color: #EFFEFF;
+            font-family: Josefin Sans;
+           
+        }
+        header{
+        background-color: #5FC8DF;
+        padding: 30px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+       align-items: center;
+       color:#FFFFFF;
+        }
+        a{
+        text-decoration: none;
+       color: #FFFFFF;
+        }
+        a:visited{
+            color:#EFFEFF;
+        }
+        hr{
+            background-color: #E1FCFE;
+            height: 1px;
+            border:none;
+            margin:10px 0;
+            box-shadow: 0 4px 8px #5FC8DF;
+        }
+       
+        .calories{
+            position: relative;
+           
+        }
+        .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 3px #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form label {
+    display: block;
+  margin-bottom: 5px;
+}
+
+.form input[type="number"],
+.form select {
+  width: 70%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  background-color: #5FC8DF; 
+  box-shadow: #E1FCFE; 
+  border-radius: 20px;
+  height: 40px;
+  width: auto;
+  padding-left: 24px; 
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px; 
+  border-style: hidden;
+  outline:none ;
+  filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1)); 
+}
+
+
+.form button:hover {
+  background-color: #FFFFFF;
+}
+#redirect{
+  position: absolute;
+  top: 80%;
+  left: 45%;
+  background-color: #EFFEFF; 
+  color:#26b0cf;
+  box-shadow: #E1FCFE; 
+  border-radius: 20px;
+  height: 40px;
+  width: auto;
+  padding-left: 24px; 
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px; 
+  border-style: hidden;
+  outline:none ;
+  filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1)); 
+  cursor:pointer;
+}
+#redirect:hover{
+    background-color:#5FC8DF;
+}
+
+.selections{
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+    </style>
+</head>
+<body>
+    <header>
+    <h2>Calories monitoring</h2>
+    <a href="/account.html" target="_blank">Go back</a>
+</header>
+   
+    <main>
+        <hr>
+       <div class="selections">
+        <form action="workout.php" method="post" class="form">
+            <label for="exercise_type">Exercise Type:</label>
+            <select id="exercise_type" name="exercise_type" required>
+                <option value="sit-ups">Sit-ups</option>
+                <option value="push-ups">Push-ups</option>
+                <option value="squats">Squats</option>
+                <option value="plank">Plank</option>
+            </select><br><br>
+            <label for="reps">Reps:</label>
+            <input type="number" id="reps" name="reps" min="0" required><br><br>
+            <label for="sets">Sets:</label>
+            <input type="number" id="sets" name="sets"min="0" required><br><br>
+            <label for="time">Time (minutes):</label>
+            <input type="number" id="time" name="time" min="0" required><br><br>
+            <button type="submit" id="save">Submit</button>
+            
+        </form>
+        <button id="redirect">View results in profile</button>
+           
+         
+    </div>
+    
+    </main>
+    <script>
+         const myButton = document.getElementById('redirect');
+      myButton.addEventListener('click', () => {
+    window.location.href =  'dashboard.html';
+});  
+    </script>
+</body>
+</html>
