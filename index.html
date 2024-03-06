@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="script" href="fitwell.js">
   <link rel="icon"  href="/images/logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
@@ -93,11 +92,11 @@
         </div>
         
       </div>
-      <button  type="button" id="register" class="custom-button" onmouseover="showUsersign()" 
+      <button  type="button" id="register" class="custom-button" onclick="showUsersign()" 
       style="background-color: #5FC8DF; box-shadow: #E1FCFE; border-radius: 20px;height: 40px;width: 133px;padding-left: 24px; padding-right: 24px;padding-top: 12px;padding-bottom: 12px; border-style: hidden;outline:none ;filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1)); cursor: pointer">
       Register now</button>
-      <script>
-       
+      <script type="text/javascript" src="/fitwell.js"></script>
+       <script>
 const createAccountForm = document.getElementById('createAccountForm');
 
 createAccountForm.addEventListener('submit', (e) => {
@@ -108,8 +107,8 @@ createAccountForm.addEventListener('submit', (e) => {
   const password = document.getElementById('password');
   console.log(`Full Name: ${fullName.value}, Email: ${email.value}, Phone Number: ${phoneNumber.value}, Password: ${password.value}`);
 });
-      </script>
-        
+     
+</script>     
      
     </div>
   </div>
@@ -153,14 +152,14 @@ createAccountForm.addEventListener('submit', (e) => {
     <button data-close-button class="close">&times;</button>
   </div>
     <p>Already have an account? <a href="/sign.html" target="_blank" id="signInLink" class="sign">Sign in</a></p>
-    <form id="createAccountForm" method="post">
+    <form id="createAccountForm" method="post" action="register.php">
       <label for="fullName">Full Name:</label><br>
       <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required><br>
       <label for="email" >Email address:</label><br>
       <input type="email" id="email" name="email" placeholder="Enter email address"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
-      <label for="phoneNumber" >Phone Number:</label><br>
-      <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number"><br>
-      <label for="password">Password?</label><br>
+      <label for="phoneNumber" >Password?</label><br>
+      <input type="tel" id="phoneNumber" name="password" placeholder="********"><br>
+      <label for="password">Confirm password:</label><br>
       <input type="password" id="password" class="pass"  name="password" placeholder="........"  required><br>
       <input type="submit" value="Submit">
     </form>
