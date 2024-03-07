@@ -24,77 +24,74 @@ header {
   align-items: center;
   padding: 20px;
 }
-.goal-container1, .goal-container2, .goal-container3{
-background-color:#ffffff;
-height:68px;
-width:305px;
-padding:0px;
-outline:#EFFEFF;
-box-shadow:2px 2px 2px #838282;
-border-radius: 10px;
+#piechart{
+  background-color: #E1FCFE;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px #000000;
 }
-.yourGoal{
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 50%;
+.left{
+  width: 50%;
+  padding: 10px;
+  float:left;
 }
-    </style>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script type="text/javascript">
-     google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawVisualization);
+.videos{
+   padding:10px;
+  float:left;
+}
 
-     function drawVisualization() {
-       var data = google.visualization.arrayToDataTable([
-         ['Days', 'Water', 'Calories', 'Steps', 'Class attendance', 'Sleep', 'Average'],
-         ['Mon',  165,      938,         522,             998,           450,      614.6],
-         ['Tue',  135,      1120,        599,             1268,          288,      682],
-         ['Wed',  157,      1167,        587,             807,           397,      623],
-         ['Thur',  139,      1110,        615,             968,           215,      609.4],
-         ['Fri',  136,      691,         629,             1026,          366,      569.6]
-       ]);
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
-       var options = {
-         title : 'Fiteness and Wellness Tracker System',
-         vAxis: {title: 'Percentage'},
-         hAxis: {title: 'Days'},
-         seriesType: 'bars',
-         series: {5: {type: 'line'}}
-       };
+      function drawChart() {
 
-       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-       chart.draw(data, options);
-     }
-   </script>
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Calories'],
+          ['Burned',     300],
+          ['Remaining',      700],
+          
+        ]);
+
+        var options = {
+          title: 'Calories Overview',
+           pieHole: 0.4,
+           slices:{
+            0:{color:'orange'},
+            1:{color:'green'}
+           }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
         <header>
           <h1 style="color:#5FC8DF">Dashboard</h1>
         </header>
         <hr>
-        <div class="analysis-section">
-          <h2>Welcome Back</h2>
-          <div id="chart_div" style="width: 900px; height: 500px;"></div>
-        </div>
-          <div class="user-section">
-            <p>Name</p>
-            <p>weigth heigth Age</p>
-            <h3>Your goals</h3>
-            <div class="goal-container1">
-              <img src="https://images.unsplash.com/photo-1590646299178-1b26ab821e34?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="run" class="yourGoal">
-              <p>Running</p>
-            </div><br>
-            <div class="goal-container2">
-              <img src="https://images.unsplash.com/photo-1520206183501-b80df61043c2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sleep" class="yourGoal">
-              <p>Sleeping</p>
-            </div><br>
-            <div class="goal-container3">
-              <img src="https://images.unsplash.com/photo-1634463278803-f9f71890e67d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="weigth" class="yourGoal">
-              <p>Weight loss</p>
-            </div><br>
-            <img src="https://images.unsplash.com/photo-1577221084712-45b0445d2b00?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="130" width="340">
-          </div>
+        <div class="left">
+          <h3>Calories Pie chart</h3>
+        <div id="piechart" style="width: 600px; height: 670px;"></div>
+      </div>
+      <div class="right">
+        <h3>Enjoy the scheduled classes!</h3>
+        <video width="600" height="350" controls autoplay>
+            <source src="https://youtu.be/H_P4_ewQzFI?si=cD4n2x-rz9t6zQQq" type="video/mp4">
+            Your browser does not support the video tag
+        </video>
+        <br>
+        <video width="600" height="350" controls autoplay>
+            <source src="https://youtu.be/g13nVd7OLYs?si=khLG9NnjIZe3YOko" type="video/mp4">
+            Your browser does not support the video tag
+        </video>
+      </div>
+      <script>
        
+      </script>
 </body>
 </html>

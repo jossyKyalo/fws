@@ -8,97 +8,71 @@
     <link rel="icon"  href="/images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
 </head>
-<style>
-    body{
-        font-family: Josefin Sans;
-        background-color: #E1FCFE;
-    }
-    a{
-        text-decoration:none;
-        color:#000000;
-    }
-   a:visited{
-    text-decoration: underline;
-    color:#1AB0B0;
-   }
-   h2{
-    text-decoration:underline;
-    font-size: 20px;
-    font-style: semibold;
-   }
-   .container{
-    display: flex;
-    position: relative;
-    height: 100vh;
-   }
-   .pane{
-   flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-   }
-   .left-side{
-    background: #EFFEFF;
-   }
-   .line{
-    position: relative;
-    width: 2px;
-    background: #000000;
-   }
-   .line span{
-    position: absolute;
-  top: 50%;
-  left: -10px;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border: 1px solid #000000;
-  border-radius: 50%;
-   }
-   .rigth-side{
-    background: #EFFEFF;
-   }
-</style>
+
 <body>
     <header>
         <a href="user.html">Account</a>
         <a href="dashboard.html">dashboard</a>
     </header>
+    <hr>
     <div class="container">
     <div class="pane left-side">
-        <h2>Account Information</h2>
-        <p>Name:</p>
-        <p>Email:</p>
+        <h2>Account Information</h2><br>
+        <p>Name:
+            <span id="fullName"></span>
+        </p><br>
+        <p>Email:
+            <span id="email"></span>
+        </p><br>
         <p>Gender</p>
         <input type="radio" name="gender">Male   
         <input type="radio" name="gender">Female
-        <h2>Contact info</h2>
-        <p>Phone number</p>
+        <br>
+        <h2>Contact Info</h2><br>
+        <label for="phoneNumber">Phone number</label><br><br>
+        <input type="tel" id="phone" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+        <br>
+        <input type="submit" class="saving" value="Submit">
     </div>
     <div class="line">
         <span></span>
     </div>
-    <div class="pane rigth-side">
-        <h2>Password and security</h2>
-        <p>Current password</p>
-        <p>New password</p>
-        <p>Confirm password</p>
-        <button class="passW">submit</button>
-        <h2>Personal details</h2>
+    <div class="pane right-side">
+        <form method="post">
+        <h2>Password and security</h2><br>
+        <p><b>Change password</b></p><br>
+        <label for="password">New password</label>
+        <input type="password" id="password" name="password">
+        <label for="newPassword">Confirm password</label>
+        <input type="password" id="newPassword" name="password">
+        <br>
+        <button class="passW">submit</button><br><br>
+        <h2>Personal details</h2><br>
         <label for="height">Height</label>
-        <input type="number" id="height" name="height">
+        <input type="number" id="height" name="height" min="0">
         <label for="weight">Weight</label>
-        <input type="number" name="weight">
+        <input type="number" id="weight" name="weight" min="0">
+        <br>
         <p>BMI</p>
         <label for="age">Age</label>
-        <input type="number" name="age">
-       
+        <input type="number" id="age" name="age" min="0">
+        <br><br>
+        <input type="submit" value="Save" id="detailSaved">
+    </form>
      </div>
     </div>
     
 </body>
 <script>
-
+   const userID = 1; 
+fetch(`get_user_data.php?userID=${userID}`)
+    .then(response => response.json())
+    .then(data => {
+        
+        document.getElementById('username').innerText = data.fullName;
+        document.getElementById('email').innerText = data.email;
+    })
+    .catch(error => console.error('Error fetching user data:', error));
 </script>
 </html>
   

@@ -90,7 +90,7 @@
   background-color: #FFFFFF;
   border-radius: 10px;
 }
-.login-popup input[type="submit"] {
+button {
   background-color: #5FC8DF; 
   box-shadow: #E1FCFE; 
   border-radius: 20px;
@@ -104,7 +104,7 @@
   outline:none ;
   filter:drop-shadow(0px 4px 4px rgba(0.883802056312561,0.9891114830970764,0.9958333373069763,1)); 
 }
-.pass::placeholder{
+.password::placeholder{
   background-image: url(https://cdn-icons-png.flaticon.com/128/2549/2549910.png);
   width: 18px;
   height: 18px;
@@ -135,12 +135,12 @@ footer{
     <hr>
     <div class="login-popup" id="login">
         <h2>User Login</h2>
-        <form id="userLogins" method="post">
+        <form id="userLogins" action="register.php" method="post">
           <label for="email">Email Address:</label><br>
           <input type="text" id="email" name="email" placeholder="Enter email address" required><br>
           <label for="pass">Password</label><br>
-          <input type="password" id="pass"  name="password" placeholder="........" required pattern="[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]"><br>
-          <input type="submit" value="Log in" >
+          <input type="password" id="password"  name="password" placeholder="........" required pattern="[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]"><br>
+          <button class="loglog" >Log in</button>
           </form>
         </div>
      <footer>
